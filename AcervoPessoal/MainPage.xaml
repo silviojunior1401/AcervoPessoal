@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AcervoPessoal.MainPage"
+             Title="📕 Acervo Pessoal">
+
+    <ScrollView>
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Cabeçalho -->
+            <VerticalStackLayout Grid.Row="0" Spacing="10">
+                <Label Text="📕 Acervo Pessoal" 
+                   FontSize="28" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"/>
+
+                <Label x:Name="StatusLabel" 
+                   HorizontalOptions="Center"
+                   TextColor="Gray"/>
+            </VerticalStackLayout>
+
+            <!-- Lista de Livros -->
+            <CollectionView x:Name="LivrosCollectionView" 
+                        Grid.Row="1"
+                        Margin="0,20,0,20">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="0,5" 
+                           Padding="15" 
+                           BackgroundColor="#F5F5F5"
+                           BorderColor="#E0E0E0">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="{Binding Titulo}" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold"/>
+                                <Label Text="{Binding Autor}" 
+                                   TextColor="Gray"/>
+                                <HorizontalStackLayout Spacing="20">
+                                    <Label Text="{Binding StatusLeitura}" 
+                                       TextColor="#2196F3"/>
+                                    <Label Text="{Binding CategoriaNome}" 
+                                       TextColor="#4CAF50"/>
+                                    <Label TextColor="#FF9800">
+                                        <Label.Text>
+                                            <MultiBinding StringFormat="⭐ {0}/5">
+                                                <Binding Path="Avaliacao" />
+                                            </MultiBinding>
+                                        </Label.Text>
+                                    </Label>
+                                </HorizontalStackLayout>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Botões -->
+            <HorizontalStackLayout Grid.Row="2" 
+                               HorizontalOptions="Center" 
+                               Spacing="20">
+                <Button Text="📚 Carregar Livros" 
+                    x:Name="CarregarButton"
+                    Clicked="OnCarregarClicked"
+                    BackgroundColor="#2196F3"/>
+
+                <Button Text="➕ Adicionar Livro" 
+                    x:Name="AdicionarButton"
+                    Clicked="OnAdicionarClicked"
+                    BackgroundColor="#4CAF50"/>
+            </HorizontalStackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

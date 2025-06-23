@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AcervoPessoal.AdicionarLivroPage"
+             Title="➕ Adicionar Livro">
+    
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="15">
+
+            <Label Text="Título *" FontAttributes="Bold"/>
+            <Entry x:Name="TituloEntry" Placeholder="Digite o título do livro"/>
+
+            <Label Text="Autor *" FontAttributes="Bold"/>
+            <Entry x:Name="AutorEntry" Placeholder="Digite o nome do autor"/>
+
+            <Label Text="ISBN" FontAttributes="Bold"/>
+            <Entry x:Name="ISBNEntry" Placeholder="Digite o ISBN (opcional)"/>
+
+            <Label Text="Editora" FontAttributes="Bold"/>
+            <Entry x:Name="EditoraEntry" Placeholder="Digite a editora"/>
+
+            <Label Text="Ano de Publicação" FontAttributes="Bold"/>
+            <Entry x:Name="AnoEntry" Placeholder="Digite o ano" Keyboard="Numeric"/>
+
+            <Label Text="Número de Páginas" FontAttributes="Bold"/>
+            <Entry x:Name="PaginasEntry" Placeholder="Digite o número de páginas" Keyboard="Numeric"/>
+
+            <Label Text="Categoria" FontAttributes="Bold"/>
+            <Picker x:Name="CategoriaPicker" Title="Selecione uma categoria"/>
+
+            <Label Text="Status de Leitura" FontAttributes="Bold"/>
+            <Picker x:Name="StatusPicker" Title="Selecione o status">
+                <Picker.Items>
+                    <x:String>Não lido</x:String>
+                    <x:String>Lendo</x:String>
+                    <x:String>Lido</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Avaliação (0-5)" FontAttributes="Bold"/>
+            <Slider x:Name="AvaliacaoSlider" 
+                    Minimum="0" 
+                    Maximum="5" 
+                    Value="0"
+                    ValueChanged="OnAvaliacaoChanged"/>
+            <Label x:Name="AvaliacaoLabel" Text="0 estrelas" HorizontalOptions="Center"/>
+
+            <Button Text="💾 Salvar Livro" 
+                    x:Name="SalvarButton"
+                    Clicked="OnSalvarClicked"
+                    BackgroundColor="#4CAF50"
+                    Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
