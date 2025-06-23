@@ -54,6 +54,14 @@ A aplicação utiliza um `DatabaseService` para gerenciar a conexão e as opera�
 3.  **Configure o arquivo `.env`** conforme as instruções da seção de configuração.
 4.  **Selecione a plataforma desejada** (Windows, Android, etc.) e execute o projeto.
 
+## 📱 Telas
+
+![Listagem de Livros](imgs/tela_1.png)
+
+![Cadastro de Livro 1](imgs/tela_2_1.png)
+
+![Cadastro de Livro 2](imgs/tela_2_2.png)
+
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas\! Se você tiver sugestões de melhorias, novas funcionalidades ou correções de bugs, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
